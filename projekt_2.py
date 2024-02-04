@@ -12,7 +12,7 @@ def duration (start_time, stop_time):
 
 def create_random_number():
   random_number = ""
-  digits = ["1","2","3","4","5","6","7","8","9"]
+  digits = [str(i) for i in range(1, 10)]
   for cycle_number in range(1,5):
     random_digit = random.choice(digits)
     random_number += random_digit
@@ -77,5 +77,4 @@ while (user_number:= input(">>>")) != random_number:
   print(line)
 print("Correct, you've guessed the right number")
 stop_time = time.time()
-
 print(f"You guessed the secret number in {duration(start_time, stop_time)} seconds.")
