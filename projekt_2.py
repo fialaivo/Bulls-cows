@@ -10,17 +10,21 @@ discord:  ivofiala
 def duration (start_time, stop_time):
     return round((stop_time-start_time),1)
 
+def create_random_number():
+  random_number = ""
+  digits = ["1","2","3","4","5","6","7","8","9"]
+  for cycle_number in range(1,5):
+    random_digit = random.choice(digits)
+    random_number += random_digit
+    digits.remove(random_digit)
+  if cycle_number == 1:
+    digits.append("0")
+  return(random_number)
+
 start_time = time.time()
 line = "-" * 40
 user_number = 0
-random_number = ""
-digits = ["1","2","3","4","5","6","7","8","9"]
-for cycle_number in range(1,5):
-  random_digit = random.choice(digits)
-  random_number += random_digit
-  digits.remove(random_digit)
-  if cycle_number == 1:
-    digits.append("0")
+random_number = create_random_number()
 print(random_number)
 print("Hi there!")
 print(line)
