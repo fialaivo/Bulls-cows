@@ -6,6 +6,10 @@ author: Ivo Fiala
 email: fiala.ivo@spszr.cz
 discord:  ivofiala
 """
+
+def duration (start_time, stop_time):
+    return round((stop_time-start_time),1)
+
 start_time = time.time()
 line = "-" * 40
 user_number = 0
@@ -17,7 +21,7 @@ for cycle_number in range(1,5):
   digits.remove(random_digit)
   if cycle_number == 1:
     digits.append("0")
-"""print(random_number)"""
+print(random_number)
 print("Hi there!")
 print(line)
 print("I've generated a random 4 digit number for you. Let's play a bulls and cows game.")
@@ -61,7 +65,6 @@ while (user_number:= input(">>>")) != random_number:
   print(f"{bulls} bulls, {cows} cows")
   print(line)
 print("Correct, you've guessed the right number")
-end_time = time.time()
-duration = end_time - start_time
+stop_time = time.time()
 
-print(f"You guessed the secret number in {round(duration,1)} seconds.")
+print(f"You guessed the secret number in {duration(start_time, stop_time)} seconds.")
